@@ -38,7 +38,7 @@ const projects = [
     title: "Lover's Retreat",
     description: "Colorist",
     content:
-      "Created a stylized horror color grade with bright reds and unnerving greens.",
+      "Created a stylized horror color grade as the colorist with bright reds and unnerving greens.",
     imageUrl: loversRetreatImage,
     link: "https://youtu.be/8c7Lg08g-NY?si=N4-QFmiOGnFVWx9O",
     buttonLabel: "Watch Online",
@@ -47,7 +47,7 @@ const projects = [
     title: "deja vu / drivers license / good 4 u",
     description: "Colorist",
     content:
-      "Created a vibrant, saturated filmic color grade with for this Noteworthy music video.",
+      "Created a vibrant, saturated filmic color grade as the colorist with for this Noteworthy music video.",
     imageUrl: oliviaRodrigoImage,
     link: "https://youtu.be/YqyjTfJ0F0c?si=qksQ08wv4XU4nmOC",
     buttonLabel: "Watch Online",
@@ -55,7 +55,7 @@ const projects = [
   {
     title: "Fear Is Not Welcome",
     description: "Colorist",
-    content: "Created a warm color grade for this Vocal Point music video.",
+    content: "Created a warm color grade as the colorist for this Vocal Point music video.",
     imageUrl: fearIsNotWelcomeImage,
     link: "https://youtu.be/fw1mBBMl6rI?si=DH-mZlYCzVbrPa-k",
     buttonLabel: "Watch Online",
@@ -64,7 +64,7 @@ const projects = [
     title: "Tokyo Cowboy",
     description: "Assistant Colorist",
     content:
-      "Created a unique workflow for correcting unwanted image artifacts in the color-grade and assisted in the conform and deliveries.",
+      "Created a unique workflow for correcting image artifacts in the color-grade and assisted in the conform and deliveries.",
     imageUrl: tokyoCowboyImage,
     link: "https://www.imdb.com/title/tt22815732/",
     buttonLabel: "View on IMDB",
@@ -100,7 +100,7 @@ const projects = [
     title: "The Piece Maker S1 E7",
     description: "Assistant Colorist",
     content:
-      "Colorist for Season 1 Episode 7, Miami: Where Time Stands Still; assistant colorist on several other episodes.",
+      "Colorist for Season 1 Episode 7, Miami: Where Time Stands Still; assisted with conform on other episodes.",
     imageUrl: pieceMakerImage,
     link: "https://www.imdb.com/title/tt27717686/",
     buttonLabel: "View on IMDB",
@@ -126,7 +126,7 @@ const projects = [
 
 interface AppProps {
   isDarkMode: boolean;
-  toggleDarkMode: () => void; // Function with no arguments and no return value
+  toggleDarkMode: () => void;
 }
 
 function App({ isDarkMode, toggleDarkMode }: AppProps) {
