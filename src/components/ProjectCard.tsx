@@ -27,21 +27,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   buttonLabel,
   imageUrl,
 }) => (
-  <Card>
+  <Card className='bg-slate-50 dark:bg-slate-900'>
     <CardHeader>
-      <CardTitle>{title}</CardTitle>
-      <CardDescription>{description}</CardDescription>
+      <CardTitle className='dark:text-slate-300 text-slate-700'>{title}</CardTitle>
+      <CardDescription className='dark:text-slate-300'>{description}</CardDescription>
     </CardHeader>
-    <CardContent className='text-slate-700'>
+    <CardContent className='text-slate-700 dark:text-slate-400'>
       {imageUrl && (
         <a href={link} target="_blank" rel="noopener noreferrer">
-          <img src={imageUrl} alt={title} className="object-cover aspect-auto md:h-40 my-5 rounded-md"/>
+          <img src={imageUrl} alt={title} className="object-contain aspect-auto md:h-40 h-28 my-5 rounded-md"/>
         </a>
       )}
       {content}
     </CardContent>
     <CardFooter>
-      <Button asChild>
+      <Button asChild className='dark:outline'>
         <a href={link} target="_blank" rel="noopener noreferrer">
           {buttonLabel}
         </a>
