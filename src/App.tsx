@@ -265,8 +265,8 @@ function App({ isDarkMode, toggleDarkMode }: AppProps) {
                 <p className="font-small text-slate-700 dark:text-slate-300">
                   If you need an hourly rate, I charge $75/hr. However, I prefer
                   to negotiate a fixed rate per project that meets your needs.
-                  Please contact me at <a href="mailto:&#098;&#101;&#097;&#117;&#049;&#119;&#114;&#105;&#103;&#104;&#116;+&#099;&#111;&#108;&#111;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#098;&#101;&#097;&#117;&#049;&#119;&#114;&#105;&#103;&#104;&#116;+&#099;&#111;&#108;&#111;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a>
-                  to get a quote for your project. I look forward to hearing from you!
+                  Please contact me at <a href="mailto:&#098;&#101;&#097;&#117;&#049;&#119;&#114;&#105;&#103;&#104;&#116;+&#099;&#111;&#108;&#111;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#098;&#101;&#097;&#117;&#049;&#119;&#114;&#105;&#103;&#104;&#116;+&#099;&#111;&#108;&#111;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a> to
+                  get a quote for your project. I look forward to hearing from you!
                 </p>
               </AccordionContent>
             </AccordionItem>
