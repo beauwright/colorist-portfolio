@@ -55,7 +55,8 @@ const projects = [
   {
     title: "Fear Is Not Welcome",
     description: "Colorist",
-    content: "Created a warm color grade as the colorist for this Vocal Point music video.",
+    content:
+      "Created a warm color grade as the colorist for this Vocal Point music video.",
     imageUrl: fearIsNotWelcomeImage,
     link: "https://youtu.be/fw1mBBMl6rI?si=DH-mZlYCzVbrPa-k",
     buttonLabel: "Watch Online",
@@ -139,27 +140,34 @@ function App({ isDarkMode, toggleDarkMode }: AppProps) {
             checked={isDarkMode}
             onCheckedChange={toggleDarkMode}
           />
-          <Label htmlFor="dark-mode">Dark Mode</Label>
+          <Label
+            htmlFor="dark-mode"
+            className="dark:text-slate-300 text-slate-700"
+          >
+            Dark Mode
+          </Label>
         </div>
-        <div className="chat chat-start mx-5 md:mx-10">
-          <div className="chat-image avatar">
-            <div className="w-10 rounded-full">
-              <img alt="Beau Wright Profile Picture" src={beauProfileImage2} />
+        <div className="md:mx-28">
+          <div className="chat chat-start mx-5 md:mx-10">
+            <div className="chat-image avatar">
+              <div className="w-10 rounded-full">
+                <img
+                  alt="Beau Wright Profile Picture"
+                  src={beauProfileImage2}
+                />
+              </div>
+            </div>
+            <div className="chat-bubble text-slate-100 bg-blue-500 text-2xl md:text-4xl font-semibold">
+              👋 Hi, I'm Beau Wright
             </div>
           </div>
-          <div className="chat-bubble text-slate-100 bg-blue-500 text-2xl md:text-4xl font-semibold">
-            👋 Hi, I'm Beau Wright
-          </div>
+          <h2 className="text-2xl font-medium m-5 md:m-10 text-slate-500 dark:text-slate-300">
+            Colorist located in Provo, UT
+          </h2>
         </div>
-        <h2 className="text-2xl font-medium m-5 md:m-10 text-slate-500 dark:text-slate-300">
-          Colorist located in Provo, UT
-        </h2>
         <div className="m-5">
           <Separator />
         </div>
-        <h2 className="text-2xl font-medium m-5 md:m-10 dark:text-slate-200 text-slate-800">
-          Top 10 Projects
-        </h2>
         <Carousel
           opts={{
             loop: true,
@@ -171,6 +179,9 @@ function App({ isDarkMode, toggleDarkMode }: AppProps) {
           ]}
           className="mx-12 md:mx-60"
         >
+          <h2 className="text-2xl font-medium my-5 dark:text-slate-200 text-slate-800">
+            Top 10 Projects
+          </h2>
           <CarouselContent className="-ml-4">
             {projects.map((project, index) => (
               <CarouselItem key={index} className="pl-4">
@@ -184,12 +195,8 @@ function App({ isDarkMode, toggleDarkMode }: AppProps) {
         <div className="m-5">
           <Separator />
         </div>
-        <div className="md:mx-40">
-          <Accordion
-            type="single"
-            collapsible
-            className="container mx-auto mt-5"
-          >
+        <div className="container md:mx-60 mt-5">
+          <Accordion type="single" collapsible className="">
             <AccordionItem value="About">
               <AccordionTrigger>
                 <p className="text-xl font-medium dark:text-slate-200 text-slate-800">
@@ -234,18 +241,18 @@ function App({ isDarkMode, toggleDarkMode }: AppProps) {
               </AccordionTrigger>
               <AccordionContent>
                 <a
-                  href="https://byu.box.com/s/lfvq8ql6h7zafit26yl2g2uq6qy6hyhr"
+                  href="https://drive.google.com/file/d/16AYqMPys3hxnQAn-A7Kwnobea1ndyYay/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img
                     src={oliviaRodrigoImage}
-                    alt="Beau Wright 2021 Demo Reel"
+                    alt="Beau Wright 2024 Demo Reel"
                     className="object-contain h-40 my-5 rounded-md"
                   />
                   <Button>
                     <a
-                      href="https://byu.box.com/s/lfvq8ql6h7zafit26yl2g2uq6qy6hyhr"
+                      href="https://drive.google.com/file/d/16AYqMPys3hxnQAn-A7Kwnobea1ndyYay/view?usp=sharing"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -265,8 +272,12 @@ function App({ isDarkMode, toggleDarkMode }: AppProps) {
                 <p className="font-small text-slate-700 dark:text-slate-300">
                   If you need an hourly rate, I charge $75/hr. However, I prefer
                   to negotiate a fixed rate per project that meets your needs.
-                  Please contact me at <a href="mailto:&#098;&#101;&#097;&#117;&#049;&#119;&#114;&#105;&#103;&#104;&#116;+&#099;&#111;&#108;&#111;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#098;&#101;&#097;&#117;&#049;&#119;&#114;&#105;&#103;&#104;&#116;+&#099;&#111;&#108;&#111;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a> to
-                  get a quote for your project. I look forward to hearing from you!
+                  Please contact me at{" "}
+                  <a href="mailto:&#098;&#101;&#097;&#117;&#049;&#119;&#114;&#105;&#103;&#104;&#116;+&#099;&#111;&#108;&#111;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">
+                    &#098;&#101;&#097;&#117;&#049;&#119;&#114;&#105;&#103;&#104;&#116;+&#099;&#111;&#108;&#111;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;
+                  </a>
+                  to get a quote for your project. I look forward to hearing
+                  from you!
                 </p>
               </AccordionContent>
             </AccordionItem>
