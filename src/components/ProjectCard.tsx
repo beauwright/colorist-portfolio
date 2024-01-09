@@ -35,7 +35,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <CardContent className='text-slate-700'>
       {imageUrl && (
         <a href={link} target="_blank" rel="noopener noreferrer">
-          <img src={imageUrl} alt={title} className="object-fill h-40 my-5 rounded-md"/>
+          <img src={imageUrl} alt={title} className="object-cover aspect-auto md:h-40 my-5 rounded-md"/>
         </a>
       )}
       {content}
