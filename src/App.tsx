@@ -16,6 +16,20 @@ import {
 import ProjectCard from "@/components/ProjectCard";
 import { Avatar, AvatarImage, AvatarFallback } from "@radix-ui/react-avatar";
 import { Separator } from "./components/ui/separator";
+import thankGodIDoImage from './assets/thank-god-I-do.webp';
+import fearIsNotWelcomeImage from './assets/fear-is-not-welcome.webp';
+import iSeeTheLightImage from './assets/I-see-the-light.webp';
+import oliviaRodrigoImage from './assets/olivia-rodrigo.webp';
+import stillImage from './assets/still.jpg';
+import bethesdaImage from './assets/bethesda.jpg';
+import pieceMakerImage from './assets/piece-maker.jpg';
+import tokyoCowboyImage from './assets/tokyo-cowboy.jpg';
+import cryoImage from './assets/cryo.jpg';
+import beauProfileImage1 from './assets/beau-wright-profile-1.jpg';
+import beauProfileImage2 from './assets/beau-wright-profile-2.jpg';
+
+
+
 
 const projects = [
   {
@@ -23,7 +37,7 @@ const projects = [
     description: "Colorist",
     content:
       "Created a warm color grade with an exciting pop of green for this Noteworthy music video.",
-    imageUrl: "./src/assets/thank-god-I-do.webp",
+    imageUrl: thankGodIDoImage,
     link: "https://youtu.be/2CjrJuA7qmo?si=JSy4daniruU04Vm6",
     buttonLabel: "Watch Online",
   },
@@ -32,7 +46,7 @@ const projects = [
     description: "Colorist",
     content:
       "Created a warm color grade with an exciting pop of green for this Vocal Point music video.",
-    imageUrl: "./src/assets/fear-is-not-welcome.webp",
+    imageUrl: fearIsNotWelcomeImage,
     link: "https://youtu.be/fw1mBBMl6rI?si=DH-mZlYCzVbrPa-k",
     buttonLabel: "Watch Online",
   },
@@ -41,7 +55,7 @@ const projects = [
     description: "Colorist",
     content:
       "Created a color grade to evoke a sunset for this Noteworthy music video.",
-    imageUrl: "./src/assets/I-see-the-light.webp",
+    imageUrl: iSeeTheLightImage,
     link: "https://www.youtube.com/watch?v=BsQ6K0yJpkY",
     buttonLabel: "Watch Online",
   },
@@ -50,7 +64,7 @@ const projects = [
     description: "Colorist",
     content:
       "Created a vibrant, saturated filmic color grade with for this Noteworthy music video.",
-    imageUrl: "./src/assets/olivia-rodrigo.webp",
+    imageUrl: oliviaRodrigoImage,
     link: "https://letterboxd.com/film/still-3/crew/",
     buttonLabel: "Watch Online",
   },
@@ -59,7 +73,7 @@ const projects = [
     description: "Colorist",
     content:
       "Created a warm, modern filmic look as the colorist for this award-winning short film about a man who ventures into the desert to photograph Damascus Arch for his terminally ill girlfriend.",
-    imageUrl: "./src/assets/still.jpg",
+    imageUrl: stillImage,
     link: "https://letterboxd.com/film/still-3/crew/",
     buttonLabel: "View on Letterboxd",
   },
@@ -68,7 +82,7 @@ const projects = [
     description: "Colorist",
     content:
       "Created a gritty, modern look for this period-piece about a grandfather searching for meaning after the death of his grandson as the colorist.",
-    imageUrl: "./src/assets/bethesda.jpg",
+    imageUrl: bethesdaImage,
     link: "https://youtu.be/WH_fO6aKOPI?si=tLX7yXHbdXFSn2g4",
     buttonLabel: "Watch Online",
   },
@@ -77,7 +91,7 @@ const projects = [
     description: "Assistant Colorist",
     content:
       "Colorist for Season 1 Episode 7, Miami: Where Time Stands Still; assistant colorist on other episodes.",
-    imageUrl: "./src/assets/piece-maker.jpg",
+    imageUrl: pieceMakerImage,
     link: "https://www.imdb.com/title/tt27717686/",
     buttonLabel: "View on IMDB",
   },
@@ -86,7 +100,7 @@ const projects = [
     description: "Assistant Colorist",
     content:
       "Created a complex workflow for correcting unwanted image artifacts in the color-grade and assisted in the color grade.",
-    imageUrl: "./src/assets/tokyo-cowboy.jpg",
+    imageUrl: tokyoCowboyImage,
     link: "https://www.imdb.com/title/tt22815732/",
     buttonLabel: "View on IMDB",
   },
@@ -94,7 +108,7 @@ const projects = [
     title: "Cryo",
     description: "VFX Artist",
     content: "Complex VFX paint-outs on a variety of shots,",
-    imageUrl: "./src/assets/cryo.jpg",
+    imageUrl: cryoImage,
     link: "https://www.imdb.com/title/tt8814500/",
     buttonLabel: "View on IMDB",
   },
@@ -108,7 +122,7 @@ function App() {
           <div className="w-10 rounded-full">
             <img
               alt="Beau Wright Profile Picture"
-              src="./src/assets/beau-wright-profile-2.jpg"
+              src={beauProfileImage2}
             />
           </div>
         </div>
@@ -117,13 +131,13 @@ function App() {
         </div>
       </div>
       <h2 className="text-2xl font-medium p-5">Colorist</h2>
-      <Separator />
+      <Separator className="m-5"/>
       <h2 className="text-xl font-medium px-4 py-10">Top 10 Projects</h2>
       <Carousel
         opts={{
           loop: "true",
         }}
-        className="mx-20"
+        className="mx-10 md:mx-20"
       >
         <CarouselContent className="-ml-4">
           {projects.map((project, index) => (
@@ -135,8 +149,8 @@ function App() {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-      <Separator />
-      <Accordion type="single" collapsible className="container mx-auto px-4">
+      <Separator className="m-5"/>
+      <Accordion type="single" collapsible className="container md:mx-20">
         <AccordionItem value="About">
           <AccordionTrigger>
             <p className="text-xl font-medium">About Me</p>
@@ -146,7 +160,7 @@ function App() {
               <Avatar>
                 <AvatarImage
                   alt="Beau Wright Profile Picture"
-                  src="./src/assets/beau-wright-profile-1.jpg"
+                  src={beauProfileImage1}
                   className="rounded-lg object-contain h-40"
                 />
                 <AvatarFallback>BW</AvatarFallback>
@@ -185,7 +199,7 @@ function App() {
               rel="noopener noreferrer"
             >
               <img
-                src="./src/assets/olivia-rodrigo.webp"
+                src={oliviaRodrigoImage}
                 alt="Beau Wright 2021 Demo Reel"
                 className="object-fill h-40 my-5 rounded-md"
               />
