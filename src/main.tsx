@@ -17,7 +17,7 @@ function Main() {
   return (
     <React.StrictMode>
       <div
-        className={`min-h-screen ${isDarkMode ? "bg-slate-950" : "bg-white"}`}
+        className={`min-h-dvh w-dvw ${isDarkMode ? "bg-slate-950" : "bg-white"}`}
       >
         <App isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       </div>

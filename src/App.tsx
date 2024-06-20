@@ -1,10 +1,4 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+
 import { BrowserRouter as Router } from "react-router-dom";
 import { Button } from "./components/ui/button";
 import {
@@ -15,7 +9,6 @@ import {
 } from "@/components/ui/accordion";
 import ProjectCard from "@/components/ProjectCard";
 import { Separator } from "./components/ui/separator";
-import Autoplay from "embla-carousel-autoplay";
 import { Switch } from "./components/ui/switch";
 import { Label } from "@/components/ui/label";
 
@@ -31,6 +24,7 @@ import tokyoCowboyImage from "./assets/tokyo-cowboy.jpg";
 import cryoImage from "./assets/cryo.jpg";
 import beauProfileImage1 from "./assets/beau-wright-profile-4.jpg";
 import beauProfileImage2 from "./assets/beau-wright-profile-3.jpg";
+import welcomeToLeague from "./assets/welcome-to-league.webp"
 
 const projects = [
   {
@@ -84,8 +78,8 @@ const projects = [
     content:
       "Created a warm, modern filmic look as the colorist for this award-winning short film about a man who ventures into the desert to photograph Damascus Arch for his terminally ill girlfriend.",
     imageUrl: stillImage,
-    link: "https://letterboxd.com/film/still-3/crew/",
-    buttonLabel: "View on Letterboxd",
+    link: "https://www.imdb.com/title/tt31541293/",
+    buttonLabel: "View on IMDB",
   },
   {
     title: "Bethesda",
@@ -122,6 +116,15 @@ const projects = [
     link: "https://www.imdb.com/title/tt8814500/",
     buttonLabel: "View on IMDB",
   },
+  {
+    title: "Welcome to the League",
+    description: "Colorist",
+    content:
+      "Created a stylized cold grade for this advertisement.",
+    imageUrl: welcomeToLeague,
+    link: "https://youtu.be/TDLWvRrg8Dk?si=O-CmpMtXXuWoUp7G",
+    buttonLabel: "Watch Online",
+  },
 ];
 
 interface AppProps {
@@ -133,7 +136,7 @@ function App({ isDarkMode, toggleDarkMode }: AppProps) {
   return (
     <Router>
       <div className={isDarkMode ? "dark" : ""}>
-        <div className="container mx-auto mt-5">
+        <div className="container mx-auto pt-5">
           <div className="justify-end flex items-center space-x-2 pt-2 mb-5 mr-5">
             <Switch
               id="dark-mode"
@@ -147,53 +150,40 @@ function App({ isDarkMode, toggleDarkMode }: AppProps) {
               Dark Mode
             </Label>
           </div>
-            <div className="chat chat-start mx-5 md:mx-10">
-              <div className="chat-image avatar">
-                <div className="w-10 rounded-full">
-                  <img
-                    alt="Beau Wright Profile Picture"
-                    src={beauProfileImage2}
-                  />
-                </div>
-              </div>
-              <div className="chat-bubble text-slate-100 bg-blue-500 text-2xl md:text-4xl font-semibold">
-                👋 Hi, I'm Beau Wright
+          <div className="chat chat-start mx-5 md:mx-10">
+            <div className="chat-image avatar">
+              <div className="w-10 rounded-full">
+                <img
+                  alt="Beau Wright Profile Picture"
+                  src={beauProfileImage2}
+                />
               </div>
             </div>
-            <h2 className="text-2xl font-medium m-5 md:m-10 text-slate-500 dark:text-slate-300">
-              Colorist located in Provo, UT
-            </h2>
+            <div className="chat-bubble text-slate-100 bg-blue-500 text-2xl md:text-4xl font-semibold">
+              👋 Hi, I'm Beau Wright
+            </div>
+          </div>
+          <h2 className="text-2xl font-medium m-5 md:m-10 text-slate-500 dark:text-slate-300">
+            Colorist located in Salt Lake City, UT
+          </h2>
           <div className="m-5">
             <Separator />
           </div>
-          <Carousel
-            opts={{
-              loop: true,
-            }}
-            plugins={[
-              Autoplay({
-                delay: 4000,
-              }),
-            ]}
-            className="mx-12 md:mx-60"
-          >
-            <h2 className="text-2xl font-medium my-5 dark:text-slate-200 text-slate-800">
-              Top 10 Projects
-            </h2>
-            <CarouselContent className="-ml-4">
-              {projects.map((project, index) => (
-                <CarouselItem key={index} className="pl-4">
-                  <ProjectCard {...project} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="m-2" />
-            <CarouselNext className="m-2" />
-          </Carousel>
+          <h2 className="text-2xl font-medium my-5 dark:text-slate-200 text-slate-800">
+            Featured Projects
+          </h2>
+          <div className="container mx-auto pt-5 flex flex-wrap justify-center">
+            {projects.map((project) => (
+              <div className="md:max-w-80 w-3/4 m-4" key={project.title}>
+                <ProjectCard {...project} />
+              </div>
+            ))}
+          </div>
+
           <div className="m-5">
             <Separator />
           </div>
-          <Accordion type="single" collapsible className="">
+          <Accordion type="single" collapsible className="pb-10">
             <AccordionItem value="About">
               <AccordionTrigger>
                 <p className="text-xl font-medium dark:text-slate-200 text-slate-800">
@@ -264,13 +254,12 @@ function App({ isDarkMode, toggleDarkMode }: AppProps) {
               </AccordionTrigger>
               <AccordionContent>
                 <p className="font-small text-slate-700 dark:text-slate-300">
-                  If you need an hourly rate, I charge $75/hr. However, I prefer
-                  to negotiate a fixed rate per project that meets your needs.
-                  Please contact me at{" "}
+                  I prefer to negotiate a fixed rate per project that meets your
+                  needs. Please contact me at{" "}
                   <a href="mailto:&#098;&#101;&#097;&#117;&#049;&#119;&#114;&#105;&#103;&#104;&#116;+&#099;&#111;&#108;&#111;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">
                     &#098;&#101;&#097;&#117;&#049;&#119;&#114;&#105;&#103;&#104;&#116;+&#099;&#111;&#108;&#111;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;
-                  </a> to
-                  get a quote for your project. I look forward to hearing
+                  </a>{" "}
+                  to get a quote for your project. I look forward to hearing
                   from you!
                 </p>
               </AccordionContent>
