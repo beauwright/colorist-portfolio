@@ -27,7 +27,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   buttonLabel,
   imageUrl,
 }) => (
-  <Card className='bg-slate-50 dark:bg-slate-900'>
+  <Card className='bg-slate-50 dark:bg-slate-900 hover:border-slate-700 dark:hover:border-slate-400'>
     <CardHeader>
       <CardTitle className='dark:text-slate-300 text-slate-700'>{title}</CardTitle>
       <CardDescription className='dark:text-slate-300'>{description}</CardDescription>
