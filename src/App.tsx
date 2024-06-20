@@ -25,6 +25,7 @@ import cryoImage from "./assets/cryo.jpg";
 import beauProfileImage1 from "./assets/beau-wright-profile-4.jpg";
 import beauProfileImage2 from "./assets/beau-wright-profile-3.jpg";
 import welcomeToLeague from "./assets/welcome-to-league.webp"
+import deepBlueRobbins from "./assets/deep-blue-robbins.webp"
 
 const projects = [
   {
@@ -52,6 +53,15 @@ const projects = [
       "Created a warm color grade as the colorist for this Vocal Point music video.",
     imageUrl: fearIsNotWelcomeImage,
     link: "https://youtu.be/fw1mBBMl6rI?si=DH-mZlYCzVbrPa-k",
+    buttonLabel: "Watch Online",
+  },
+  {
+    title: "Deep Blue - Aidan Robbins",
+    description: "Colorist",
+    content:
+      "Created a warm color grade as the colorist for this episode of Deep Bue.",
+    imageUrl: deepBlueRobbins,
+    link: "https://www.byutv.org/6636ea6b-a0e8-496a-b364-f21ea947f0b4?utm_source=byub&utm_medium=share&utm_campaign=share_2024&utm_content=Episode",
     buttonLabel: "Watch Online",
   },
   {
@@ -174,7 +184,7 @@ function App({ isDarkMode, toggleDarkMode }: AppProps) {
           </h2>
           <div className="container mx-auto pt-5 flex flex-wrap justify-center">
             {projects.map((project) => (
-              <div className="md:max-w-80 w-3/4 m-4" key={project.title}>
+              <div className="md:max-w-80 w-5/6 m-4" key={project.title}>
                 <ProjectCard {...project} />
               </div>
             ))}
